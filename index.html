@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Chandan Singh – AI Researcher specializing in Medical AI, Deep Learning, and Generative AI. Explore research, publications, and projects." />
+  <meta name="keywords" content="AI Researcher, Medical AI, Deep Learning, NMDNet, Generative AI, Computer Vision, NLP, Chandan Singh" />
+  <meta property="og:title" content="Chandan Singh | AI Researcher" />
+  <meta property="og:description" content="AI Researcher specializing in Medical AI & Deep Learning" />
+  <title>Chandan Singh | AI Researcher</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;1,7..72,300&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== NOISE OVERLAY ========== -->
+  <div class="noise-overlay"></div>
+
+  <!-- ========== CURSOR ========== -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ========== NAV ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">[</span>CS<span class="logo-bracket">]</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#publications" class="nav-link">Publications</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <!-- Animated background grid -->
+    <div class="hero-grid"></div>
+    <!-- Floating orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-tag">
+          <span class="tag-dot"></span>
+          <span class="dm-mono">Available for Research Collaboration</span>
+        </div>
+
+        <h1 class="hero-name">
+          <span class="name-line">Chandan</span>
+          <span class="name-line accent-name">Singh</span>
+        </h1>
+
+        <div class="hero-title dm-mono">
+          <span class="typing-text" id="typingText"></span><span class="cursor-blink">|</span>
+        </div>
+
+        <p class="hero-tagline">
+          Turning data into intelligent solutions —<br />
+          <em>where AI meets real-world impact.</em>
+        </p>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">1.5<span class="stat-plus">+</span></span>
+            <span class="stat-label">Years Research</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">5<span class="stat-plus">+</span></span>
+            <span class="stat-label">Publications</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">6<span class="stat-plus">+</span></span>
+            <span class="stat-label">Projects</span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">
+            <span>View Projects</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <button class="btn-secondary" id="cvPreviewBtn">
+            <i class="fa-solid fa-file-pdf"></i>
+            <span>Download CV</span>
+          </button>
+        </div>
+
+        <!-- CV Preview trigger -->
+        <button class="cv-preview-chip" id="cvChipBtn">
+          <i class="fa-regular fa-eye"></i>
+          <span class="dm-mono">Preview CV</span>
+        </button>
+      </div>
+
+      <div class="hero-right">
+        <div class="profile-frame">
+          <div class="profile-ring profile-ring-1"></div>
+          <div class="profile-ring profile-ring-2"></div>
+          <div class="profile-img-wrap">
+            <img src="data/profile.jpeg" alt="Chandan Singh" style="width:100%; height:100%; object-fit:cover; object-position: center 0%;" />
+          </div>
+          <!-- Floating badges -->
+          <div class="float-badge badge-1">
+            <i class="fa-solid fa-brain"></i>
+            <span>Medical AI</span>
+          </div>
+          <div class="float-badge badge-2">
+            <i class="fa-solid fa-dna"></i>
+            <span>Deep Learning</span>
+          </div>
+          <div class="float-badge badge-3">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Generative AI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      <span class="dm-mono">scroll</span>
+    </div>
+  </section>
+
+  <!-- ========== CV MODAL ========== -->
+  <div class="modal-overlay" id="cvModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <span class="dm-mono modal-title">CV Preview — Chandan Singh</span>
+        <div class="modal-actions">
+          <a href="data/ChandansinghnewcvGenAI.pdf" class="modal-btn-download" download="Chandan_Singh_CV.pdf">
+            <i class="fa-solid fa-download"></i> Download
+          </a>
+          <button class="modal-close" id="modalClose">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <iframe src="data/ChandansinghnewcvGenAI.pdf" width="100%" height="100%" frameborder="0"></iframe>
+        <div class="cv-embed-placeholder">
+          <div class="cv-mock">
+            <div class="cv-mock-header">
+              <div class="cv-mock-name"></div>
+              <div class="cv-mock-sub"></div>
+            </div>
+            <div class="cv-mock-section">
+              <div class="cv-mock-label"></div>
+              <div class="cv-mock-line"></div>
+              <div class="cv-mock-line short"></div>
+            </div>
+            <div class="cv-mock-section">
+              <div class="cv-mock-label"></div>
+              <div class="cv-mock-line"></div>
+              <div class="cv-mock-line"></div>
+              <div class="cv-mock-line short"></div>
+            </div>
+            <div class="cv-mock-section">
+              <div class="cv-mock-label"></div>
+              <div class="cv-mock-line"></div>
+              <div class="cv-mock-line short"></div>
+            </div>
+            <p class="cv-note dm-mono">Replace the src of an &lt;iframe&gt; in index.html with your hosted PDF URL to show a live preview here.</p>
+          </div>
+          <iframe src="data/ChandansinghnewcvGenAI.pdf" width="100%" height="100%" frameborder="0"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-label dm-mono">
+        <span class="label-num">01</span>
+        <span class="label-line"></span>
+        <span>About</span>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 class="section-heading">Bridging AI &amp; <br /><em>Clinical Reality</em></h2>
+          <p class="about-para">
+            I am an AI Researcher with over 1.5 years of hands-on research experience at BBAU, Lucknow,funded by Department of Science and Technology, Delhi, focused on using deep learning to solve real-world medical challenges — particularly in neuromuscular disorder diagnosis and computational genetics.
+          </p>
+          <p class="about-para">
+            My work spans <strong>Generative AI</strong>, <strong>Computer Vision</strong>, <strong>NLP</strong>, and <strong>Medical Imaging</strong>. I design and train architectures based on artificial intelligence for the diagnosis of Medical disease specifically Neuromuscular Disorders.
+          </p>
+          <p class="about-para">
+            Beyond model accuracy, I care deeply about <strong>explainability</strong> — ensuring AI tools can be trusted in clinical workflows. I have contributed to multiple peer-reviewed publications and continue to push the boundaries of AI-assisted diagnosis.
+          </p>
+
+          <div class="about-chips">
+            <span class="chip">Neuromuscular Disorders</span>
+            <span class="chip">Explainable AI</span>
+            <span class="chip">Generative Models</span>
+            <span class="chip">Microarray Analysis</span>
+            <span class="chip">RAG Systems</span>
+            <span class="chip">Computer Vision</span>
+          </div>
+        </div>
+
+        <div class="about-aside">
+          <div class="info-card">
+            <div class="info-card-row">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <span class="info-label dm-mono">Location</span>
+                <span class="info-val">Lucknow, Uttar Pradesh</span>
+              </div>
+            </div>
+            <div class="info-card-row">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <span class="info-label dm-mono">Email</span>
+                <a href="mailto:singh.chandan9828@gmail.com" class="info-val link-val">singh.chandan9828@gmail.com</a>
+              </div>
+            </div>
+            <div class="info-card-row">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <span class="info-label dm-mono">Phone</span>
+                <span class="info-val">+91 6394073132</span>
+              </div>
+            </div>
+            <div class="info-card-row">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <div>
+                <span class="info-label dm-mono">Current Role</span>
+                <span class="info-val">Research Assistant, BBAU</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="focus-card">
+            <h4 class="dm-mono focus-heading">Research Focus</h4>
+            <ul class="focus-list">
+              <li><span class="focus-dot"></span>Neuromuscular Disease Diagnostics</li>
+              <li><span class="focus-dot"></span>Generative Models for Medical Imaging</li>
+              <li><span class="focus-dot"></span>Explainable AI for Clinical Trust</li>
+              <li><span class="focus-dot"></span>Gene Expression Analysis</li>
+              <li><span class="focus-dot"></span>Retrieval-Augmented Generation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="section section-alt" id="projects">
+    <div class="container">
+      <div class="section-label dm-mono">
+        <span class="label-num">02</span>
+        <span class="label-line"></span>
+        <span>Projects</span>
+      </div>
+
+      <h2 class="section-heading">Research &amp; <em>Engineering</em></h2>
+
+      <!-- Filter tabs -->
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="research">Research</button>
+        <button class="filter-btn" data-filter="academic">Academic</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- Research Assistant AI Bot -->
+        <div class="project-card featured" data-category="academic">
+          <div class="project-card-inner">
+            <div class="project-top">
+              <div class="project-icon-wrap">
+                <i class="fa-solid fa-robot"></i>
+              </div>
+              <div class="project-badges">
+                <span class="badge-featured">Featured</span>
+                <span class="badge-live">Live</span>
+              </div>
+            </div>
+            <h3 class="project-title">Research Assistant AI Bot</h3>
+            <p class="project-desc">
+              A RAG-based question-answering system for research PDFs. Implements document chunking, vector indexing with Pinecone, and context-aware response synthesis via Gemini API. Deployed on Hugging Face Spaces.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-pill">RAG</span>
+              <span class="tech-pill">Gemini API</span>
+              <span class="tech-pill">Pinecone</span>
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">HF Spaces</span>
+            </div>
+            <div class="project-links">
+              <a href="https://huggingface.co/spaces/chandans98/ResearchAI" target="_blank" rel="noopener" class="btn-project-live">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+              <a href="https://github.com/chandan160/Research-assistant" target="_blank" rel="noopener" class="btn-project-gh">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- NMDNet -->
+        <div class="project-card" data-category="research">
+          <div class="project-card-inner">
+            <div class="project-top">
+              <div class="project-icon-wrap">
+                <i class="fa-solid fa-microscope"></i>
+              </div>
+              <span class="badge-research">Research</span>
+            </div>
+            <h3 class="project-title">NMDNet</h3>
+            <p class="project-desc">
+              End-to-end CNN model for automated neuromuscular disorder classification from ultrasound images. Achieved 94% accuracy and 0.97 ROC-AUC. Integrated LIME for clinical explainability and transparency.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-pill">CNN</span>
+              <span class="tech-pill">LIME</span>
+              <span class="tech-pill">PyTorch</span>
+              <span class="tech-pill">Medical Imaging</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/chandan160/Neuromuscular-Ultrasound-Classification-Using-Deep-Learning.git" target="_blank" rel="noopener" class="btn-project-gh">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- VAE-based FSHD -->
+        <div class="project-card" data-category="research">
+          <div class="project-card-inner">
+            <div class="project-top">
+              <div class="project-icon-wrap">
+                <i class="fa-solid fa-dna"></i>
+              </div>
+              <span class="badge-research">Research</span>
+            </div>
+            <h3 class="project-title">VAE-based FSHD Diagnosis</h3>
+            <p class="project-desc">
+              Applied Variational Autoencoders to overcome the curse of dimensionality in microarray gene expression datasets. Trained downstream classifiers on learned latent representations, achieving high accuracy in FSHD early diagnosis.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-pill">VAE</span>
+              <span class="tech-pill">Microarray</span>
+              <span class="tech-pill">Scikit-learn</span>
+              <span class="tech-pill">TensorFlow</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/chandan160/VAE-based-dimensionality-reduction.git" target="_blank" rel="noopener" class="btn-project-gh">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- MicroNMDNet -->
+        <div class="project-card" data-category="research">
+          <div class="project-card-inner">
+            <div class="project-top">
+              <div class="project-icon-wrap">
+                <i class="fa-solid fa-wave-square"></i>
+              </div>
+              <div class="project-badges">
+                <span class="badge-research">Research</span>
+                <span class="badge-comm">Communicated</span>
+              </div>
+            </div>
+            <h3 class="project-title">MicroNMDNet</h3>
+            <p class="project-desc">
+              WT-GAN based data augmentation pipeline for FSHD gene expression classification. Combines Wavelet Transformation with a Generative Adversarial Network to synthesize balanced samples, significantly improving diagnostic accuracy.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-pill">GAN</span>
+              <span class="tech-pill">Wavelet Transform</span>
+              <span class="tech-pill">Gene Expression</span>
+              <span class="tech-pill">PyTorch</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/chandan160/Medical-Data-Augmentation-Using-Generative-AI.git" target="_blank" rel="noopener" class="btn-project-gh">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- YouNotes -->
+        <div class="project-card" data-category="academic">
+          <div class="project-card-inner">
+            <div class="project-top">
+              <div class="project-icon-wrap">
+                <i class="fa-brands fa-youtube"></i>
+              </div>
+            </div>
+            <h3 class="project-title">YouNotes</h3>
+            <p class="project-desc">
+              AI-powered YouTube video summarizer web app. Extracts captions via PyTube, then leverages the BART large language model to produce concise, structured summaries — turning hour-long lectures into digestible notes.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-pill">BART</span>
+              <span class="tech-pill">PyTube</span>
+              <span class="tech-pill">NLP</span>
+              <span class="tech-pill">Flask</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/chandan160/YouNotes" target="_blank" rel="noopener" class="btn-project-gh">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image Caption Generator -->
+        <div class="project-card" data-category="academic">
+          <div class="project-card-inner">
+            <div class="project-top">
+              <div class="project-icon-wrap">
+                <i class="fa-solid fa-image"></i>
+              </div>
+            </div>
+            <h3 class="project-title">Image Caption Generator</h3>
+            <p class="project-desc">
+              Deep learning image captioning system using ResNet101 as an image encoder and a Transformer decoder. Trained on MS-COCO dataset for descriptive caption generation. Deployed with an interactive Streamlit UI.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-pill">ResNet101</span>
+              <span class="tech-pill">Transformer</span>
+              <span class="tech-pill">MS-COCO</span>
+              <span class="tech-pill">Streamlit</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/chandan160/Image-captioning-project.git" target="_blank" rel="noopener" class="btn-project-gh">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PUBLICATIONS ========== -->
+  <section class="section" id="publications">
+    <div class="container">
+      <div class="section-label dm-mono">
+        <span class="label-num">03</span>
+        <span class="label-line"></span>
+        <span>Publications</span>
+      </div>
+
+      <h2 class="section-heading">Research <em>Output</em></h2>
+
+      <div class="pub-list">
+
+        <div class="pub-card">
+          <div class="pub-year dm-mono">2025</div>
+          <div class="pub-body">
+            <span class="pub-type-tag">Journal Paper</span>
+            <h3 class="pub-title">NMDNet: Explainable AI Driven Neuro Muscular Detection and Classification Using Deep Learning Network</h3>
+            <p class="pub-authors dm-mono">Khamparia, Aditya · <strong>Chandan Singh</strong> · Deepak Gupta</p>
+            <p class="pub-venue">Intelligent Decision Technologies</p>
+            <div class="pub-tags">
+              <span class="pub-tag">Deep Learning</span>
+              <span class="pub-tag">XAI</span>
+              <span class="pub-tag">Medical Imaging</span>
+              <span class="pub-tag">CNN</span>
+            </div>
+            <div class="pub-links">
+              <a href="https://journals.sagepub.com/doi/abs/10.1177/18724981251391747" class="pub-link"><i class="fa-solid fa-file-lines"></i> Paper</a>
+              <a href="https://github.com/chandan160/Neuromuscular-Ultrasound-Classification-Using-Deep-Learning" class="pub-link"><i class="fa-brands fa-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-year dm-mono">2025</div>
+          <div class="pub-body">
+            <span class="pub-type-tag">Conference Paper</span>
+            <h3 class="pub-title">MicroNMDNet: Deep Learning Driven Dimensionality Reduction and Classification for Neuromuscular Dystrophy</h3>
+            <p class="pub-authors dm-mono"><strong>Chandan Singh</strong></p>
+            <p class="pub-venue">International Conference on Computing and Communication Networks (Springer Nature Switzerland)</p>
+            <div class="pub-tags">
+              <span class="pub-tag">Data Augmentation</span>
+              <span class="pub-tag">GAN</span>
+              <span class="pub-tag">Gene Expression</span>
+              <span class="pub-tag">Neuromuscular Disorders</span>
+            </div>
+            <div class="pub-links">
+              <a href="https://link.springer.com/chapter/10.1007/978-3-032-14194-1_17" class="pub-link"><i class="fa-solid fa-file-lines"></i> Paper</a>
+              <a href="https://github.com/chandan160/Medical-Data-Augmentation-Using-Generative-AI" class="pub-link"><i class="fa-brands fa-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-year dm-mono">2025</div>
+          <div class="pub-body">
+            <span class="pub-type-tag">Book Chapter</span>
+            <h3 class="pub-title">Neuromuscular Disease Classification: Leveraging Deep Learning Feature Extractors and Applications</h3>
+            <p class="pub-authors dm-mono"><strong>Chandan Singh</strong></p>
+            <p class="pub-venue">Artificial Intelligence in Microbial Research: Bridging the Gap (Springer Nature Singapore)</p>
+            <div class="pub-tags">
+              <span class="pub-tag">Dimensionality Reduction</span>
+              <span class="pub-tag">Deep Learning</span>
+              <span class="pub-tag">FSHD</span>
+            </div>
+            <div class="pub-links">
+              <a href="#" class="pub-link"><i class="fa-solid fa-file-lines"></i> Paper</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-card communicated">
+          <div class="pub-year dm-mono">2024</div>
+          <div class="pub-body">
+            <span class="pub-type-tag">Conference Paper</span>
+            <h3 class="pub-title">VAENMD: Deep learning driven feature extractor for diagnosis of Facioscapulohumeral Muscular Dystrophy</h3>
+            <p class="pub-authors dm-mono"><strong>Chandan Singh</strong></p>
+            <p class="pub-venue">2025 International Conference on Emerging Systems and Intelligent Computing (ESIC)(IEEE)</p>
+            <div class="pub-tags">
+              <span class="pub-tag">GAN</span>
+              <span class="pub-tag">Wavelet Transform</span>
+              <span class="pub-tag">Data Augmentation</span>
+              <span class="pub-tag">FSHD</span>
+            </div>
+            <div class="pub-links">
+              <a href="https://ieeexplore.ieee.org/abstract/document/10962768" class="pub-link"><i class="fa-solid fa-file-lines"></i> Paper</a>
+              <a href="https://github.com/chandan160/VAE-based-dimensionality-reduction" class="pub-link"><i class="fa-brands fa-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-year dm-mono">2024</div>
+          <div class="pub-body">
+            <span class="pub-type-tag">Journal Paper</span>
+            <h3 class="pub-title">Attention Spiking Neural Networks for Real-Time Vehicle Safety Detection</h3>
+            <p class="pub-authors dm-mono"><strong>Chandan Singh</strong></p>
+            <p class="pub-venue">International Journal on Engineering Artificial Intelligence Management, Decision Support, and Policies</p>
+            <div class="pub-tags">
+              <span class="pub-tag">Spiking Neural Networks</span>
+              <span class="pub-tag">Attention Mechanism</span>
+              <span class="pub-tag">Computer Vision</span>
+            </div>
+            <div class="pub-links">
+              <a href="https://submissions.adroidjournals.com/index.php/ijaimd/article/view/37" class="pub-link"><i class="fa-solid fa-file-lines"></i> Paper</a>
+            </div>
+          </div>
+        </div>
+
+        
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCE ========== -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <div class="section-label dm-mono">
+        <span class="label-num">04</span>
+        <span class="label-line"></span>
+        <span>Experience</span>
+      </div>
+
+      <h2 class="section-heading">Professional <em>Journey</em></h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item active-job">
+          <div class="timeline-marker">
+            <div class="tl-dot"></div>
+            <div class="tl-pulse"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-role">Research Assistant</h3>
+                <p class="tl-org dm-mono">Babasaheb Bhimrao Ambedkar University (BBAU)</p>
+              </div>
+              <div class="tl-meta">
+                <span class="tl-date dm-mono">Sep 2024 – Present</span>
+                <span class="tl-type current">Current</span>
+              </div>
+            </div>
+            <p class="tl-location"><i class="fa-solid fa-location-dot"></i> Lucknow, Uttar Pradesh</p>
+            <ul class="tl-points">
+              <li>Conducting deep learning research on neuromuscular disorder diagnosis, with a focus on ultrasound and microarray data analysis.</li>
+              <li>Designing and training architectures including Variational Autoencoders, Siamese Networks, and GANs for feature extraction and disease classification.</li>
+              <li>Contributed to multiple peer-reviewed publications in computational genetics and AI-based medical diagnosis.</li>
+              <li>Supporting funded research through data analysis, model optimization, and comprehensive technical documentation.</li>
+            </ul>
+            <div class="tl-skills">
+              <span class="tl-pill">Deep Learning</span>
+              <span class="tl-pill">Medical AI</span>
+              <span class="tl-pill">VAE</span>
+              <span class="tl-pill">GAN</span>
+              <span class="tl-pill">XAI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="tl-dot"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-role">Product Engineer Intern</h3>
+                <p class="tl-org dm-mono">Observance Solutions</p>
+              </div>
+              <div class="tl-meta">
+                <span class="tl-date dm-mono">Aug 2024 – Sep 2024</span>
+                <span class="tl-type intern">Internship</span>
+              </div>
+            </div>
+            <p class="tl-location"><i class="fa-solid fa-location-dot"></i> Lucknow, Uttar Pradesh</p>
+            <ul class="tl-points">
+              <li>Customized payroll and employee management modules on the Python-based Odoo ERP framework.</li>
+              <li>Developed REST APIs to streamline HR data exchange between system components.</li>
+              <li>Automated payslip generation workflows compliant with PFRDA guidelines.</li>
+            </ul>
+            <div class="tl-skills">
+              <span class="tl-pill">Python</span>
+              <span class="tl-pill">Odoo</span>
+              <span class="tl-pill">REST API</span>
+              <span class="tl-pill">ERP</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-label dm-mono">
+        <span class="label-num">05</span>
+        <span class="label-line"></span>
+        <span>Skills</span>
+      </div>
+
+      <h2 class="section-heading">Technical <em>Arsenal</em></h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <i class="fa-solid fa-brain"></i>
+            <h3>AI / ML &amp; Medical AI</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-info"><span>Deep Learning</span><span class="dm-mono">95%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Computer Vision</span><span class="dm-mono">88%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>NLP / LLMs</span><span class="dm-mono">85%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Generative AI (GAN, VAE)</span><span class="dm-mono">90%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Explainable AI</span><span class="dm-mono">82%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <i class="fa-solid fa-code"></i>
+            <h3>Programming</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-info"><span>Python</span><span class="dm-mono">93%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="93"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>SQL</span><span class="dm-mono">78%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>JavaScript</span><span class="dm-mono">70%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>R</span><span class="dm-mono">65%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <i class="fa-solid fa-layer-group"></i>
+            <h3>Libraries &amp; Frameworks</h3>
+          </div>
+          <div class="badge-cloud">
+            <span class="badge-skill">PyTorch</span>
+            <span class="badge-skill">TensorFlow</span>
+            <span class="badge-skill">Keras</span>
+            <span class="badge-skill">Scikit-learn</span>
+            <span class="badge-skill">Hugging Face</span>
+            <span class="badge-skill">LangChain</span>
+            <span class="badge-skill">OpenCV</span>
+            <span class="badge-skill">NumPy</span>
+            <span class="badge-skill">Pandas</span>
+            <span class="badge-skill">Matplotlib</span>
+            <span class="badge-skill">Streamlit</span>
+            <span class="badge-skill">Flask</span>
+            <span class="badge-skill">FastAPI</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <i class="fa-solid fa-cloud"></i>
+            <h3>Cloud &amp; Tools</h3>
+          </div>
+          <div class="badge-cloud">
+            <span class="badge-skill">AWS</span>
+            <span class="badge-skill">GCP</span>
+            <span class="badge-skill">Vector Databases</span>
+            <span class="badge-skill">Git / GitHub</span>
+            <span class="badge-skill">Docker</span>
+            <span class="badge-skill">Jupyter</span>
+            <span class="badge-skill">Hugging Face Spaces</span>
+            <span class="badge-skill">Gemini API</span>
+            <span class="badge-skill">Weights &amp; Biases</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EDUCATION ========== -->
+  <section class="section section-alt" id="education">
+    <div class="container">
+      <div class="section-label dm-mono">
+        <span class="label-num">06</span>
+        <span class="label-line"></span>
+        <span>Education</span>
+      </div>
+
+      <h2 class="section-heading">Academic <em>Foundation</em></h2>
+
+      <div class="edu-grid">
+
+        <div class="edu-card">
+          <div class="edu-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div class="edu-body">
+            <span class="edu-degree">Master of Computer Applications (MCA)</span>
+            <h3 class="edu-inst">Amrita Vishwa Vidyapeetham</h3>
+            <p class="edu-meta dm-mono">Specialization: Artificial Intelligence &amp; Machine Learning</p>
+            <div class="edu-footer">
+              <span class="edu-year dm-mono"><i class="fa-regular fa-calendar"></i> 2022 – 2024</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-icon">
+            <i class="fa-solid fa-university"></i>
+          </div>
+          <div class="edu-body">
+            <span class="edu-degree">Bachelor of Science — Information Technology (B.Sc. IT)</span>
+            <h3 class="edu-inst">Babasaheb Bhimrao Ambedkar University (BBAU)</h3>
+            <p class="edu-meta dm-mono">Computer Science &amp; Information Technology</p>
+            <div class="edu-footer">
+              <span class="edu-year dm-mono"><i class="fa-regular fa-calendar"></i> 2017 – 2020</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-label dm-mono">
+        <span class="label-num">07</span>
+        <span class="label-line"></span>
+        <span>Contact</span>
+      </div>
+
+      <h2 class="section-heading">Let's <em>Connect</em></h2>
+
+      <div class="contact-grid">
+
+        <div class="contact-left">
+          <p class="contact-intro">
+            Whether you're interested in research collaboration, a project partnership, or just want to talk AI — my inbox is always open.
+          </p>
+
+          <div class="contact-cards">
+            <a href="mailto:singh.chandan9828@gmail.com" class="contact-card">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <span class="contact-card-label dm-mono">Email</span>
+                <span class="contact-card-val">singh.chandan9828@gmail.com</span>
+              </div>
+            </a>
+            <a href="tel:+916394073132" class="contact-card">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <span class="contact-card-label dm-mono">Phone</span>
+                <span class="contact-card-val">+91 6394073132</span>
+              </div>
+            </a>
+            <div class="contact-card">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <span class="contact-card-label dm-mono">Location</span>
+                <span class="contact-card-val">Lucknow, Uttar Pradesh, India</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-row">
+            <a href="https://www.linkedin.com/in/chandan-singh-693a6b200/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/chandan160" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.kaggle.com/chandansingh98" target="_blank" rel="noopener" class="social-icon" aria-label="Kaggle">
+              <i class="fa-brands fa-kaggle"></i>
+            </a>
+            <a href="https://huggingface.co/chandans98" target="_blank" rel="noopener" class="social-icon" aria-label="Hugging Face">
+              <span class="hf-icon">🤗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-right">
+          <div class="contact-form-card">
+            <h3 class="dm-mono form-heading">Send a Message</h3>
+            <div class="form-group">
+              <label class="dm-mono form-label" for="fname">Name</label>
+              <input type="text" id="fname" class="form-input" placeholder="Your Name" />
+            </div>
+            <div class="form-group">
+              <label class="dm-mono form-label" for="femail">Email</label>
+              <input type="email" id="femail" class="form-input" placeholder="your@email.com" />
+            </div>
+            <div class="form-group">
+              <label class="dm-mono form-label" for="fmsg">Message</label>
+              <textarea id="fmsg" class="form-input form-textarea" placeholder="Hi Chandan, I'd like to discuss..."></textarea>
+            </div>
+            <button class="btn-send" id="sendBtn" onclick="handleFormSubmit()">
+              <span>Send Message</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+            <p class="form-note dm-mono" id="formNote"></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-bracket">[</span>CS<span class="logo-bracket">]</span>
+      </div>
+      <p class="footer-copy dm-mono">
+        © <span id="footerYear"></span> Chandan Singh · Built with precision &amp; purpose
+      </p>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/chandan-singh-693a6b200/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/chandan160" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.kaggle.com/chandansingh98" target="_blank" rel="noopener" aria-label="Kaggle"><i class="fa-brands fa-kaggle"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
